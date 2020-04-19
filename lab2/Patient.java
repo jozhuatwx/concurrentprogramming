@@ -1,3 +1,5 @@
+package lab2;
+
 public class Patient extends Thread {
   Doctor doc;
   String name;
@@ -5,9 +7,9 @@ public class Patient extends Thread {
   Patient(String name, Doctor doc) {
     this.name = name;
     this.doc = doc;
-  }
+  };
 
   public void run() {
     Doctor.consult(name);
-  }
-}
+  };
+};

@@ -1,4 +1,6 @@
-public class Tutorial2 {
+package lab2;
+
+public class Lab2 {
   public static void main(String args[]) {
     Doctor doc = new Doctor();
 
@@ -11,5 +13,5 @@ public class Tutorial2 {
     p2.start();
     p3.start();
     p4.start();
-  }
-}
+  };
+};
