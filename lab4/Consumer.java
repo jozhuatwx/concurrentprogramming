@@ -16,7 +16,7 @@ public class Consumer extends Thread {
 
           Thread.sleep(3000);
           s.count--;
-          System.out.println("Comsumed 1. Remaining count = " + s.count);
+          System.out.println("Consumed 1. Remaining count = " + s.count);
           s.notify();
         };
       }
