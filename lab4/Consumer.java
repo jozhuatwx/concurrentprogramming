@@ -10,12 +10,12 @@ public class Consumer extends Thread {
     try {
       while (true) {
         synchronized(s) {
-          if (s.count == 0) {
+          if (s.count.get() == 0) {
             s.wait();
           };
 
           Thread.sleep(3000);
-          s.count--;
+          s.count.getAndDecrement();
           System.out.println("Consumed 1. Remaining count = " + s.count);
           s.notify();
         };

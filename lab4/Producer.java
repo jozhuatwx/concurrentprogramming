@@ -10,12 +10,12 @@ public class Producer extends Thread {
     try {
       while (true) {
         synchronized(s) {
-          if (s.count == 5) {
+          if (s.count.get() == 5) {
             s.wait();
           };
 
           Thread.sleep(2000);
-          s.count++;
+          s.count.getAndIncrement();
           System.out.println("Produced 1. Remaining count = " + s.count);
           s.notify();
         };

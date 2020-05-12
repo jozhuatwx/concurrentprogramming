@@ -15,7 +15,7 @@ public class Barber extends Thread {
   public void run() {
     try {
       while (true) {
-        if (c.count > 0) {
+        if (c.count.get() > 0) {
           // determine customer gets haircut and/or shaving
           int act = (new Random().nextInt(3) + 1);
           // gets haircut
@@ -34,10 +34,8 @@ public class Barber extends Thread {
             };
           };
           // reduce customer
-          c.count--;
+          c.count.getAndDecrement();
           System.out.println("-1. Remaining customers: " + c.count);
-        } else {
-          Thread.sleep(1);
         };
       }
     } catch (Exception e) {

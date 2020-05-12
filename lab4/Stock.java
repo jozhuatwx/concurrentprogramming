@@ -1,5 +1,7 @@
 package lab4;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class Stock {
-  int count = 3;
+  AtomicInteger count = new AtomicInteger(3);
 };
